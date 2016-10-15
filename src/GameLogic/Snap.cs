@@ -119,7 +119,7 @@ namespace CardGames.GameLogic
 				FlipNextCard();
 			}
 		}
-
+	
 		/// <summary>
 		/// Gets the player's score.
 		/// </summary>
