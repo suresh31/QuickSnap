@@ -26,13 +26,15 @@ namespace CardGames
 			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
 			{
 				myGame.Start();
+				
 			}
 			if (myGame.IsStarted)
 			{
 				if ( SwinGame.KeyTyped (KeyCode.vk_LSHIFT) &&
 					 SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
 				{
-					//TODO: add sound effects
+						SwinGame.LoadSoundEffectNamed ("cheer", "cheer.wav");
+				 SwinGame.PlaySoundEffect ("cheer");
 				}
 				else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
 				{

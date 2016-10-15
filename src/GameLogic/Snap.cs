@@ -103,8 +103,11 @@ namespace CardGames.GameLogic
 			{
 				_topCards [0] = _topCards [1];		// move top to card 2
 				_topCards [1] = _deck.Draw ();		// get a new top card
-				_topCards[1].TurnOver();			// reveal card
+				_topCards[1].TurnOver();				// reveal card
+				SwinGame.LoadSoundEffectNamed ("Slap", "slap.wav");
+				 SwinGame.PlaySoundEffect ("Slap");
 			}
+			
 		}
 
 		/// <summary>
@@ -144,11 +147,14 @@ namespace CardGames.GameLogic
 				 _topCards [0] != null && _topCards [0].Rank == _topCards [1].Rank) // and its a match
 			{
 				_score[player]++;
-				//TODO: consider playing a sound here...
+				SwinGame.LoadSoundEffectNamed ("steelsword", "steelsword.wav");
+				 SwinGame.PlaySoundEffect ("steelsword");
 			}
 			else if ( player >= 0 && player < _score.Length)
 			{
 				_score[player]--;
+				SwinGame.LoadSoundEffectNamed ("throwknife", "throwknife.wav");
+				 SwinGame.PlaySoundEffect ("throwknife");
 			}
 
 			// stop the game...
